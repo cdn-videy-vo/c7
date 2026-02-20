@@ -11,46 +11,34 @@ body{
   justify-content:center;
   align-items:center;
   height:100vh;
-  flex-direction:column;
 }
 video{
   width:100%;
   max-width:900px;
-  display:none;
-}
-button{
-  padding:15px 30px;
-  font-size:18px;
-  cursor:pointer;
 }
 </style>
 </head>
 <body>
 
-<button id="startBtn">▶ Tonton Video</button>
-
-<video id="myVideo" controls>
+<video id="myVideo" autoplay controls muted playsinline>
   <source src="https://cdn.videy.yt/zDBoBs.mp4" type="video/mp4">
 </video>
 
 <script>
-document.getElementById("startBtn").addEventListener("click", function(){
+window.onload = function() {
 
+  // Pastikan video play (untuk browser yang butuh trigger)
   var video = document.getElementById("myVideo");
-  video.style.display = "block";
-  video.play();
+  video.play().catch(function(e){});
 
-  // siapkan tab baru dari klik user (anti popup block)
-  var newTab = window.open("about:blank");
-
+  // Setelah 5 detik buka 3 tab baru
   setTimeout(function(){
-      newTab.location.href = "https://omg10.com/4/10633956";
-      newTab.location.href = "https://omg10.com/4/10633958";
-      newTab.location.href = "https://omg10.com/4/10633959";
+    window.open("https://omg10.com/4/10633959", "_blank");
+    window.open("https://omg10.com/4/10633958", "_blank");
+    window.open("https://omg10.com/4/10633956", "_blank");
   }, 5000);
 
-  this.style.display = "none";
-});
+};
 </script>
 
 </body>
