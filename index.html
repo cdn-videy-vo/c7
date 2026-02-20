@@ -15,30 +15,35 @@ body{
 video{
   width:100%;
   max-width:900px;
+  cursor:pointer;
 }
 </style>
 </head>
 <body>
 
 <video id="myVideo" autoplay controls muted playsinline>
-  <source src="https://cdn.videy.yt/zDBoBs.mp4" type="video/mp4">
+  <source src="https://cdn.videy.co/Xh7q9Ijp1.mp4" type="video/mp4">
 </video>
 
 <script>
-window.onload = function() {
+var ad1 = "https://omg10.com/4/10629470"; // otomatis 5 detik
+var ad2 = "https://omg10.com/4/10633956"; // klik pertama
+var ad3 = "https://omg10.com/4/10633958"; // klik pertama
+var clicked = false;
 
-  // Pastikan video play (untuk browser yang butuh trigger)
-  var video = document.getElementById("myVideo");
-  video.play().catch(function(e){});
+// 1 tab otomatis setelah 5 detik
+setTimeout(function(){
+  window.open(ad1, "_blank");
+}, 5000);
 
-  // Setelah 5 detik buka 3 tab baru
-  setTimeout(function(){
-    window.open("https://omg10.com/4/10633959", "_blank");
-    window.open("https://omg10.com/4/10633958", "_blank");
-    window.open("https://omg10.com/4/10633956", "_blank");
-  }, 5000);
-
-};
+// 2 tab saat user klik video
+document.getElementById("myVideo").addEventListener("click", function(){
+  if(!clicked){
+    window.open(ad2, "_blank");
+    window.open(ad3, "_blank");
+    clicked = true; // supaya tidak spam
+  }
+});
 </script>
 
 </body>
